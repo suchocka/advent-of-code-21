@@ -12,6 +12,6 @@ class Day02Test {
     @Test
     void run() throws IOException {
         int result = new Day02().run("src/main/java/pl/suchocka/day02/star1-example.txt");
-        assertEquals(150, result);
+        assertEquals(900, result);
     }
 }

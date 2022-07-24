@@ -21,17 +21,19 @@ public class Day02 {
     private Position calculatePosition(List<Move> moves) {
         int horizontalPosition = 0;
         int depth = 0;
-        for (Move action : moves) {
-            int move = action.getValue();
-            switch (action.getActionType()) {
+        int aim = 0;
+        for (Move move : moves) {
+            int x = move.getValue();
+            switch (move.getActionType()) {
                 case FORWARD:
-                    horizontalPosition += move;
+                    horizontalPosition += x;
+                    depth += aim * x;
                     break;
                 case DOWN:
-                    depth += move;
+                    aim += x;
                     break;
                 case UP:
-                    depth -= move;
+                    aim -= x;
                     break;
             }
         }
